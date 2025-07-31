@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
   <title>SFMOMA Media Art Record Training</title>
@@ -7,65 +7,115 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/black.css" id="theme"/>
   <style>
+    :root{
+      --brand:#e74c3c;            /* accent color */
+      --muted:#a0a0a0;
+      --bg:#0e0e10;
+    }
+    .reveal{ background: radial-gradient(1200px 600px at 20% 0%, #121217 0%, var(--bg) 60%); }
+    .reveal h1, .reveal h2, .reveal h3 { letter-spacing:.02em }
+    .reveal .slides section { backdrop-filter: none; }
+    .brand { color: var(--brand); }
+    .muted { color: var(--muted); }
     .small{font-size:.9rem}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;}
     .tight li{margin:.25em 0}
-    pre code{font-size:.7em}
+    pre code{font-size:.78em; line-height:1.35}
+    .cols{ display:flex; gap:2rem; align-items:flex-start; }
+    .col{ flex:1; }
+    .card{
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px;
+      padding:1rem 1.25rem;
+      background: rgba(255,255,255,.03);
+    }
+    .pill{
+      display:inline-block; padding:.25rem .6rem; border-radius:999px;
+      border:1px solid rgba(255,255,255,.2); font-size:.8em; color:#fff;
+    }
+    .callout{
+      border-left:4px solid var(--brand); padding:.6rem 1rem;
+      background: rgba(231, 76, 60, .08); border-radius:6px;
+    }
+    .kbd{ border:1px solid rgba(255,255,255,.25); border-bottom-width:2px;
+          padding:.15rem .35rem; border-radius:6px; font-family:inherit; font-size:.9em; }
+    img.screenshot{border-radius:8px; border:1px solid rgba(255,255,255,.15);}
+    .logo{ position:fixed; left:16px; top:16px; opacity:.8; font-weight:700; letter-spacing:.06em; }
+    .logo span{ color:var(--brand); }
+    .progress {height:4px!important;}
+
+    /* example: make a slide fit neatly */
+    .fit-slide h2{font-size:1.6rem;margin-bottom:.35rem}
+    .fit-slide .small{font-size:.9rem}
+    .fit-slide .tight li{margin:.18em 0;line-height:1.2;font-size:.95rem}
+
   </style>
 </head>
 <body>
-<div class="reveal"><div class="slides">
+<div class="logo">SFMOMA<span>·</span>MediaWiki</div>
+<div class="reveal">
+  <div class="slides">
 
 <!-- TITLE -->
-<section>
-  <h1>MediaWiki for Art Records</h1>
-<h4 style="color: #888; font-weight: normal;">Fostering collaborative art documentation through MediaWiki</h4>
-  
+<section data-auto-animate>
+  <h1>MediaWiki for <span class="brand">Art Records</span></h1>
+  <h4 class="muted" style="font-weight: normal;">Fostering collaborative art documentation</h4>
 </section>
 
 <section>
-  <h2>Where to Find MediaWiki</h2>
-  <p style="font-size:1.2em; margin-top:1em;">
-    MediaWiki is located at:
-  </p>
+  <h2>Where to find MediaWiki</h2>
+  <p style="font-size:1.2em; margin-top:1em;">Your entry point to records:</p>
   <p style="font-size:1.5em; margin-top:0.5em;">
     <a href="http://mw.sfmoma.org/" target="_blank">http://mw.sfmoma.org/</a>
   </p>
-  <p style="color:#888; margin-top:1em;">
-    (Bookmark this link – it’s your entry point to all artwork records)
-  </p>
 </section>
 
+<!-- KEYBOARD HELP -->
 <section>
-  <div style="display: flex; align-items: center; gap: 2rem;">
-    <div>
-      <h3>The Artwork Record</h3>
-      <ul>
-        <li><strong>Descriptive:</strong> Provenance, fabrication methods, installation parameters, archival records, condition reports</li>
-        <li><strong>Contextual:</strong> Related works, influences, critical reception, writings, interviews</li>
-        <li><strong>Together:</strong> Builds a strong curatorial record that preserves meaning, supports exhibitions, and ensures long-term care and scholarship</li>
+  <h2>VisualEditor: 60‑second tour</h2>
+  <div class="cols">
+    <div class="col">
+      <ul class="tight">
+        <li><span class="pill">Headings</span> structure the record</li>
+        <li><span class="pill">Insert → Image</span> for artworks &amp; installs</li>
+        <li><span class="pill">Link</span> to related artists, exhibitions</li>
+        <li><span class="pill">Cite</span> to add references</li>
       </ul>
+      <p class="small muted">Shortcuts: <span class="kbd">Ctrl/Cmd</span> + <span class="kbd">K</span> link, <span class="kbd">B</span> bold, <span class="kbd">I</span> italics.</p>
     </div>
+    <div class="col">
+      <img src="img/ve.gif" alt="VisualEditor UI" class="screenshot"/>
+      <p class="small muted">Don’t see the toolbar? You’re in source view — click “Switch to visual editing”.</p>
+    </div>
+  </div>
+</section>
+
+<!-- RECORD CONCEPT -->
+<section>
+  <h2>The Artwork Record</h2>
+  <ul>
+    <li><strong>Descriptive:</strong> Provenance, fabrication, install parameters, condition, archival materials</li>
+    <li><strong>Contextual:</strong> Related works, influences, reception, interviews</li>
+    <li><strong>Together:</strong> Preserves meaning, supports exhibitions, enables long‑term care &amp; scholarship</li>
+  </ul>
 </section>
 
 <section>
-  <div style="display: flex; align-items: center; gap: 2rem;">
-    <div>
-      <h3>The Artwork Record</h3>
-      <img src="img/partrecord.png">
-    </div>
+  <img src="img/partrecord.png" alt="Partial artwork record" class="screenshot"/>
 </section>
 
+<!-- GOALS -->
 <section>
   <h2>Our Goals</h2>
   <ul>
-    <li>Foster collaboration</li>
-    <li>Capture knowledge from multiple voices, perspectives, and contexts</li>
+    <li>Foster collaboration across teams</li>
+    <li>Capture multi‑voice knowledge</li>
     <li>Serve the entire museum audience</li>
-    <li>Address the knowledge needs of all art forms, both traditional and non-traditional</li>
-    <li>Create an experience that people will like and want to use</li>
-    <li>Make something approachable, easy to use, and frictionless</li>
+    <li>Accommodate traditional &amp; non‑traditional art forms</li>
+    <li>Create an experience people like to use</li>
+    <li>Keep it approachable, easy, and low‑friction</li>
     <li>Use existing systems for their best purpose</li>
-    <li>Keep artwork at the center</li>
+    <li><strong>Keep the artwork at the center</strong></li>
   </ul>
 </section>
 
@@ -76,96 +126,70 @@
     <li>Why Media Art Records matter</li>
     <li>Jim Campbell: key documentation themes</li>
     <li>MediaWiki basics (fast)</li>
-    <li>Art Reord template: structure & examples</li>
+    <li>Art Record template: structure &amp; examples</li>
     <li>Mini‑lab: create your record</li>
   </ol>
 </section>
 
 <!-- JIM CAMPBELL -->
 <section>
-  <h2>Digital Watch (1991) – Artwork Record Structure</h2>
-  <h4 style="color:#888;">Jim Campbell</h4>
-
-  <p style="font-size: 0.9em; color:#aaa;">
-    <em>Full record available at 
+  <h2>Digital Watch (1991) – Record Structure</h2>
+  <h4 class="muted">Jim Campbell</h4>
+  <p class="small muted"><em>Full record:</em> 
     <a href="http://mw.sfmoma.org/index.php/Digital_Watch" target="_blank">
       mw.sfmoma.org/Digital_Watch
-    </a></em>
+    </a>
   </p>
-
-  <ul>
-    <li><strong>1. Overview:</strong> Basic object info and acquisition details</li>
-    <li><strong>2. Curatorial Description:</strong> Interpretation and significance</li>
-    <li><strong>3. Technical Narrative:</strong> How the work functions</li>
-    <li><strong>4–5. History & Exhibition History:</strong> Provenance and where it’s been shown</li>
-    <li><strong>6–8. Equipment, Room Requirements, Installation:</strong> Practical setup and hardware details</li>
-    <li><strong>9–10. Artist Commentary & Maintenance:</strong> Artist’s notes and ongoing care</li>
-    <li><strong>11. References:</strong> Citations, essays, related documentation</li>
+  <ul class="tight">
+    <li><strong>Overview</strong> — object & acquisition</li>
+    <li><strong>Curatorial</strong> — interpretation & significance</li>
+    <li><strong>Technical</strong> — how it works</li>
+    <li><strong>History / Exhibitions</strong> — provenance & venues</li>
+    <li><strong>Equipment / Room / Install</strong> — setup & hardware</li>
+    <li><strong>Artist notes / Maintenance</strong> — care</li>
+    <li><strong>References</strong> — citations & docs</li>
   </ul>
 </section>
+
 
 <!-- MEDIAWIKI BASICS -->
 <section>
   <h2>MediaWiki Basics (6 tools)</h2>
   <ul class="tight">
-    <li>VisualEditor (WYSIWYG) vs. wikitext</li>
-    <li>Links: <code>[[Page name]]</code></li>
-    <li>Files: <code>[[File:Name.jpg|thumb|caption]]</code></li>
-    <li>Categories: <code>[[Category:Media art records]]</code></li>
-    <li>Page history & diffs</li>
+    <li><strong>VisualEditor</strong> (WYSIWYG) ↔ <span class="mono">wikitext</span></li>
+    <li>Links: <span class="mono">[[Page name]]</span></li>
+    <li>Files: <span class="mono">[[File:Name.jpg|thumb|caption]]</span></li>
+    <li>Categories: <span class="mono">[[Category:Media art records]]</span></li>
+    <li>Page history &amp; diffs</li>
     <li>Talk pages for notes</li>
   </ul>
 </section>
 
-<section>
-  <h2>Our House Template</h2>
-  <p class="small">
-    This template helps us create <strong>consistent records</strong> for every artwork.  
-    It includes standard fields (artist name, description, technical info, etc.) so that 
-    anyone can find the same information in the same place.
-  </p>
+<!-- OUR TEMPLATE -->
+<section class="fit-slide">
+  <h2>Standard Template</h2>
+  <p class="small">A template for <strong>consistent records</strong>—same info, same place, every time.</p>
 
-  <p><strong>Example template structure:</strong></p>
-  
-  <pre><code class="nohighlight">
-<ul>
-  <li>[[File: Image.jpg]]</li>
-</ul>
-
-{| class="wikitable"
-|-
-| Artist Name        || [[:Category:ArtistName|ArtistName]]
-|-
-| Artist Description || Nationality, born 19xx
-|-
-| Title              || ''Artwork Title''
-|-
-| Year               || 1991
-|-
-| Description        || Short description here
-|-
-| Credit Line        || 
-|-
-| Accession Number   || 
-|}
-
-<HTML5video width="650" height="360" autoplay="false"></HTML5video>
-
-== Curatorial Description ==
-== Technical Narrative ==
-== Components ==
-== Exhibitions ==
-== Installation ==
-== Iterations ==
-== Manuals and hardware information ==
-== References ==
-
-[[Category:ArtistName]]
-[[Category:Artwork]]
-[[Category:YEAR]]
-[[Category:Media art records]]
-  </code></pre>
+  <ul class="tight">
+    <li><strong>Lead image</strong></li>
+    <li><strong>Artist</strong> — name; short description (nationality, birth year)</li>
+    <li><strong>Title</strong> — work title</li>
+    <li><strong>Year</strong></li>
+    <li><strong>Short description</strong> — 1–2 sentences</li>
+    <li><strong>Credit line</strong></li>
+    <li><strong>Accession number</strong></li>
+    <li><strong>Curatorial Description</strong> — interpretation & significance</li>
+    <li><strong>Technical Narrative</strong> — how it works</li>
+    <li><strong>Components</strong> — equipment, media, parts</li>
+    <li><strong>Exhibitions</strong></li>
+    <li><strong>Installation</strong> — room/setup requirements</li>
+    <li><strong>Iterations</strong> — versions/updates</li>
+    <li><strong>Manuals & Hardware Information</strong></li>
+    <li><strong>References</strong> — citations & related docs</li>
+  </ul>
+  <p class="small"><strong>Categories</strong>: Artist, Artwork, Year, <em>Media art records</em></p>
 </section>
+
 
 <!-- RECORD SKELETON -->
 <section>
@@ -193,15 +217,15 @@
 == Components ==
 == Exhibitions ==
 == Installation ==
-&lt;gallery mode="packed" heights="180"&gt;
+<gallery mode="packed" heights="180">
 File:Install-front.jpg
 File:Install-back.jpg
-&lt;/gallery&gt;
+</gallery>
 == Iterations ==
 == Manuals and Hardware Information ==
 == Ingest & Checksums ==
 == References ==
-&lt;references/&gt;
+<references/>
 
 [[Category:Media art records]]
 [[Category:Jim Campbell]]
@@ -213,13 +237,16 @@ File:Install-back.jpg
   <h2>Mini‑Lab (30 min)</h2>
   <ol class="tight">
     <li>Create page: <span class="mono">Artwork:Jim Campbell/Title (Year)</span></li>
-    <li>Paste the skeleton above</li>
+    <li>Paste the skeleton</li>
     <li>Fill the table (Artist, Title, Year, Credit, Accession)</li>
-    <li>Add at least two images to the gallery</li>
-    <li>Write Curatorial Description)</li>
+    <li>Add ≥ 2 images to the gallery</li>
+    <li>Write <em>Curatorial Description</em></li>
     <li>Add Categories: <span class="mono">Media art records</span>, <span class="mono">Jim Campbell</span>, <span class="mono">20XX</span></li>
     <li>Save with a clear Edit Summary</li>
   </ol>
+  <aside class="notes">
+    Encourage VisualEditor first; demonstrate switching to source only for the table or gallery tweaks.
+  </aside>
 </section>
 
 <!-- EXAMPLES -->
@@ -239,7 +266,7 @@ File:Install-back.jpg
     <li>Info table complete (artist, title, year, credit, accession)</li>
     <li>At least one installation photo uploaded</li>
     <li>Curatorial and technical sections filled</li>
-    <li>Components and Iterations clearly listed</li>
+    <li>Components and iterations clearly listed</li>
     <li>Categories correct</li>
     <li>Edit summary used</li>
   </ul>
@@ -250,20 +277,25 @@ File:Install-back.jpg
   <h2>Next Steps</h2>
   <ul>
     <li>Finish draft record → curator review</li>
-    <li>Learn to link Exhibitions and Iterations to related records</li>
+    <li>Link Exhibitions and Iterations to related records</li>
     <li>Use Talk pages for follow‑ups and approvals</li>
   </ul>
-  <p class="small">Questions?</p>
+  <p class="small muted">Questions?</p>
 </section>
 
-</div></div>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
 <script>
   Reveal.initialize({
     hash: true,
     slideNumber: true,
-    transition: 'slide'
+    transition: 'slide',
+    plugins: [ RevealNotes ],
+    controlsTutorial: true,
+    progress: true
   });
 </script>
 </body>
